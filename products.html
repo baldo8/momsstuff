@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon&family=Syne+Mono&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/bfcef29fe7.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+
+            <nav class="navbar navbar-expand-lg" style="background-color: #52c4b1;">
+
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"><i class="fa-solid fa-spa"></i></span>
+                    </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="container-fluid">
+            <img src="./img/corita.png" alt=" foto de un vector corita" id="vectorCorita">
+        </div>
+    </header>
+
+    <body>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heading-section" id="whoWeAre">
+                    <h2>Our Products</h2>
+                    <img src="images/under-heading.png" alt="">
+                </div>
+            </div>
+        </div>
+
+
+
+        <section>
+            <ul>
+                <li class="list active" data-filter="all">All</li>
+                <li class="list" data-filter="small_Suculent">small_Suculents</li>
+                <li class="list" data-filter="large_Suculent">large_Suculents</li>
+                <li class="list" data-filter="goraCora">goraCora</li>
+                <li class="list" data-filter="camisaCora">camisaCora</li>
+
+
+            </ul>
+            <div class="product">
+                <div class="itemBox small_Suculent"><img src="./img/product1.jpg" alt=""></div>
+                <div class="itemBox large_Suculent"><img src="./img/lsSuclt.jpg" alt=""></div>
+                <div class="itemBox goraCora"><img src="./img/goraCora.jpg" alt=""></div>
+                <div class="itemBox camisaCora"><img src="./img/blogpost1.jpg" alt=""></div>
+
+                <div class="itemBox small_Suculent"><img src="./img/smS1.jpg" alt=""></div>
+                <div class="itemBox large_Suculent"><img src="./img/lgS1.jpg" alt=""></div>
+                <div class="itemBox goraCora"><img src="./img/blogpost3.jpg" alt=""></div>
+                <div class="itemBox camisaCora"><img src="./img/blogpost5.jpg" alt=""></div>
+
+
+            </div>
+
+        </section>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.list').click(function() {
+                    const value = $(this).attr('data-filter');
+                    if (value == 'all') {
+                        $('.itemBox').show('1000');
+                    } else {
+                        $('.itemBox').not('.' + value).hide('1000')
+                        $('.itemBox').filter('.' + value).show('1000')
+                    }
+                })
+
+                $('.list').click(function() {
+                    $(this).addClass('active').siblings().removeClass('active');
+                })
+
+            })
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+        <script src="./jquery/jquery.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>
