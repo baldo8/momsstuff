@@ -1,0 +1,40 @@
+const Product = require('../models/Product');
+
+function createProduct(req, res) {
+    var body = req.body;
+    Product.create(body)
+        .then(product => res.status(200).send(product))
+}
+
+function obtainProduct(req, res) {
+
+    Product.find()
+        .then(products => res.status(200).send(products))
+}
+
+function modifyProduct(req, res) {
+    var body = req.body;
+    var idP = req.params.id;
+    Product.updateOne(body, {
+            where: {
+                id: idP
+            }
+        })
+        .then(producto => res.status(200).send(producto))
+}
+
+function deleteProduct(req, res) {
+    var idP = req.params.id;
+    Product.destroy({
+            where: {
+                id: idP
+            }
+        })
+        .then(x => res.status(200).send("Se elimino el producto"))
+}
+module.exports = {
+    createProduct,
+    obtainProduct,
+    modifyProduct,
+    deleteProduct
+}
